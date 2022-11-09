@@ -4,11 +4,18 @@
 ###Codeclimate maintainability badge:
 <a href="https://codeclimate.com/github/zwg3/python-project-49/maintainability"><img src="https://api.codeclimate.com/v1/badges/4c54ad22338cf823bbf3/maintainability" /></a>
 
+###Even numbers game demonstration
+https://asciinema.org/a/H4N5wUxO8uQDPiNLLAIXI86L3
+
 ###Calculator game demonstration
-https://asciinema.org/a/js4MWhaLbt7TOEcujbyelsuno
+https://asciinema.org/a/G5L4LfbdR3TTutdTm3vsRLcif
 
 ###Greatest common divisor game demonstration
-https://asciinema.org/a/ptcIvK6u0HoAkEQUJ6vYvvZB4
+https://asciinema.org/a/Zcda5WmT3bmmGHB7dAuHJXxxo
 
 ###Arithmethic progression game demonstration
-https://asciinema.org/a/nGISdqyd4n74YKbXFZHtj5kJg
+https://asciinema.org/a/QL57dKgJ216xLSv6MscOPcLjJ
+
+###Prime numbers game demonstration
+https://asciinema.org/a/KqL9hZVEoKa15hEyfZyI5UhMx
+
