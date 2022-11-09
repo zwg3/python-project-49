@@ -6,3 +6,6 @@
 
 ###Calculator game demonstration
 https://asciinema.org/a/js4MWhaLbt7TOEcujbyelsuno
+
+###Greatest common divisor game demonstration
+https://asciinema.org/a/ptcIvK6u0HoAkEQUJ6vYvvZB4
