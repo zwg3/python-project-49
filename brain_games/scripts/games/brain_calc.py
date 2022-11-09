@@ -27,7 +27,7 @@ def get_answer(x, y):
         return 1
     elif y != x:
         print(f''''{y}' is wrong answer ;(. Correct answer was '{x}'.''')
-        print(f'Let`s try again, {NAME}!')
+        print(f'''Let's try again, {NAME}!''')
         return 4
 
 
