@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import random
+import prompt
 from brain_games.scripts.cli import welcome_user
 
 name = welcome_user()
@@ -20,14 +21,13 @@ def ask(z, a, b):
         return correct_answer
 
 
-def get_answer(x):
-    user_answer = int(input())
-    if user_answer == x:
+def get_answer(x, y):
+    if y == x:
         print('Correct!')
         return 1
-    elif user_answer != x:
-        print(f'{user_answer} is wrong answer ;(. Correct answer was {x}')
-        print(f'Let`s try again, {name}')
+    elif y != x:
+        print(f''''{y}' is wrong answer ;(. Correct answer was '{x}'.''')
+        print(f'Let`s try again, {name}!')
         return 4
 
 
@@ -36,6 +36,7 @@ def main():
     num_1 = 0
     num_2 = 0
     operation = 0
+    user_answer = 0
     correct_answer = 0
     count = 0
 
@@ -44,6 +45,7 @@ def main():
         num_2 = random.randint(1, 100)
         operation = random.randint(1, 3)
         correct_answer = ask(operation, num_1, num_2)
-        count += get_answer(correct_answer)
+        user_answer = prompt.integer('Your answer: ')
+        count += get_answer(correct_answer, user_answer)
         if count == 3:
-            print(f'Congratulations, {name} !')
+            print(f'Congratulations, {name}!')

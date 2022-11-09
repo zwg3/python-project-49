@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 import random
+import prompt
 from brain_games.scripts.cli import welcome_user
 
 name = welcome_user()
 
 
-def get_answer(x):
-    user_answer = int(input())
-    if user_answer == x:
+def get_answer(x, y):
+    if y == x:
         print('Correct!')
         return 1
-    elif user_answer != x:
-        print(f'{user_answer} is wrong answer ;(. Correct answer was {x}')
+    elif y != x:
+        print(f''''{y}' is wrong answer ;(. Correct answer was '{x}'.''')
         print(f'Let`s try again, {name}!')
         return 4
 
@@ -26,9 +26,10 @@ def main():
     step = 0
     count = 0
     replaced = 0
+    user_answer = 0
     correct_answer = 0
     while count < 3:
-        step = random.randint(2, 5)
+        step = random.randint(1, 5)
         num_1 = random.randint(1, 20)
         num_2 = random.randint(65, 100)
         line = list(range(num_1, num_2, step))
@@ -40,7 +41,8 @@ def main():
         line_str[replaced] = '..'
         line_str = ' '.join(line_str)
         print(f'Question: {line_str}')
-        count += get_answer(correct_answer)
+        user_answer = prompt.integer('Your answer: ')
+        count += get_answer(correct_answer, user_answer)
         line_str = []
         if count == 3:
-            print(f'Congratulations, {name} !')
+            print(f'Congratulations, {name}!')
