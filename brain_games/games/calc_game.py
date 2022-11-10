@@ -33,3 +33,7 @@ def main():
         count += game_starter(conditions, correct_answer, NAME)
         if count == 3:
             print(f'Congratulations, {NAME}!')
+
+
+if __name__ == "__main__":
+    main()

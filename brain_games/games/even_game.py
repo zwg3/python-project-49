@@ -1,19 +1,27 @@
 #!/usr/bin/env python3
 from brain_games.scripts.welcome_user import welcome_user
-from brain_games.scripts.game_starter_integers import game_starter
-from math import gcd
+from brain_games.scripts.game_starter_strings import game_starter
 import random
 
 NAME = welcome_user()
-QUESTION = 'Find the greatest common divisor of given numbers.'
+QUESTION = 'Answer "yes" if the number is even, otherwise answer "no".'
+
+
+def is_even(x):
+    if x % 2 == 0:
+        return True
+    else:
+        return False
 
 
 def get_conditions():
     number_1 = random.randint(1, 100)
-    number_2 = random.randint(1, 100)
-    question = f'{number_1} {number_2}'
-    asnswer = gcd(number_1, number_2)
-    return question, asnswer
+    answer = is_even(number_1)
+    if answer:
+        answer = 'yes'
+    else:
+        answer = 'no'
+    return number_1, answer
 
 
 def main():
@@ -24,3 +32,7 @@ def main():
         count += game_starter(conditions, correct_answer, NAME)
         if count == 3:
             print(f'Congratulations, {NAME}!')
+
+
+if __name__ == "__main__":
+    main()
