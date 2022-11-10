@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-from brain_games.scripts.welcome_user import welcome_user
-from brain_games.scripts.game_starter_integers import game_starter
+from brain_games.scripts.brain_games_1 import conditions_resolver
 import random
 
-NAME = welcome_user()
 QUESTION = 'What is the result of the expression?'
 
 
@@ -22,18 +20,8 @@ def get_conditions():
     if operation == 3:
         question = f'{number_1} * {number_2}'
         answer = number_1 * number_2
-    return question, answer
+    return str(question), str(answer)
 
 
 def main():
-    print(QUESTION)
-    count = 0
-    while count < 3:
-        conditions, correct_answer = get_conditions()
-        count += game_starter(conditions, correct_answer, NAME)
-        if count == 3:
-            print(f'Congratulations, {NAME}!')
-
-
-if __name__ == "__main__":
-    main()
+    conditions_resolver(QUESTION, get_conditions)
