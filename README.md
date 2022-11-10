@@ -4,8 +4,8 @@
 <a href="https://codeclimate.com/github/zwg3/python-project-49/maintainability"><img src="https://api.codeclimate.com/v1/badges/4c54ad22338cf823bbf3/maintainability" /></a>
 
 ### Requirements
-python 3.10
-prompt 0.4.1
+- python 3.10
+- prompt 0.4.1
 
 ### Installation:
 In terminal type the following command from the package directory:
