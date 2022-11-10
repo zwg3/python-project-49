@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from brain_games.scripts.brain_games_1 import conditions_resolver
+from brain_games.scripts.brain_games_main import conditions_resolver
 import random
 
 QUESTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
