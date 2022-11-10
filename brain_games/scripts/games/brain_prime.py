@@ -1,41 +1,36 @@
 #!/usr/bin/env python3
+from brain_games.scripts.welcome_user import welcome_user
+from brain_games.scripts.game_starter_strings import game_starter
 import random
-import prompt
-from brain_games.scripts.cli import welcome_user
 
 NAME = welcome_user()
-
-
-def get_answer(x, y):
-    if y == x:
-        print('Correct!')
-        return 1
-    elif y != x:
-        print(f''''{y}' is wrong answer ;(. Correct answer was '{x}'.''')
-        print(f'''Let's try again, {NAME}!''')
-        return 4
+QUESTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def is_prime(x):
     if x < 2:
-        return 'no'
+        return False
     for i in range(2, x):
         if x % i == 0:
-            return 'no'
-    return 'yes'
+            return False
+    return True
+
+
+def get_conditions():
+    number_1 = random.randint(1, 100)
+    answer = 0
+    if is_prime(number_1):
+        answer = 'yes'
+    else:
+        answer = 'no'
+    return number_1, answer
 
 
 def main():
-    print('Answer "yes" if given number is prime. Otherwise answer "no".')
-    NUMBER_1 = 0
-    USER_ANSWER = 0
-    CORRECT_ANSWER = 0
-    COUNT = 0
-    while COUNT < 3:
-        NUMBER_1 = random.randint(1, 100)
-        CORRECT_ANSWER = is_prime(NUMBER_1)
-        print(f'Question: {NUMBER_1}')
-        USER_ANSWER = prompt.string('Your answer: ')
-        COUNT += get_answer(CORRECT_ANSWER, USER_ANSWER)
-        if COUNT == 3:
+    print(QUESTION)
+    count = 0
+    while count < 3:
+        conditions, correct_answer = get_conditions()
+        count += game_starter(conditions, correct_answer, NAME)
+        if count == 3:
             print(f'Congratulations, {NAME}!')

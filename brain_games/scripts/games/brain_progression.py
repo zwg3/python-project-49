@@ -1,47 +1,39 @@
 #!/usr/bin/env python3
 import random
-import prompt
-from brain_games.scripts.cli import welcome_user
+from brain_games.scripts.welcome_user import welcome_user
+from brain_games.scripts.game_starter_integers import game_starter
 
 NAME = welcome_user()
+QUESTION = 'What number is missing in the progression?'
 
 
-def get_answer(x, y):
-    if y == x:
-        print('Correct!')
-        return 1
-    elif y != x:
-        print(f''''{y}' is wrong answer ;(. Correct answer was '{x}'.''')
-        print(f'''Let's try again, {NAME}!''')
-        return 4
+def get_conditions():
+    step = 0
+    line_integers = []
+    line_strings = []
+    number_1 = 0
+    number_2 = 0
+    replaced_index = 0
+    replaced_value = 0
+    step = random.randint(1, 5)
+    number_1 = random.randint(1, 20)
+    number_2 = random.randint(65, 100)
+    line_integers = list(range(number_1, number_2, step))
+    line_integers = line_integers[0: 10]
+    replaced_index = random.randint(0, len(line_integers) - 1)
+    for i, x in enumerate(line_integers):
+        line_strings.append(str(x))
+    replaced_value = int(line_strings[replaced_index])
+    line_strings[replaced_index] = '..'
+    line_strings = ' '.join(line_strings)
+    return line_strings, replaced_value
 
 
 def main():
-    print('What number is missing in the progression?')
-    STEP = 0
-    LINE_INTEGERS = []
-    LINE_STRINGS = []
-    NUMBER_1 = 0
-    NUMBER_2 = 0
-    COUNT = 0
-    REPLACED_INDEX = 0
-    USER_ANSWER = 0
-    CORRECT_ANSWER = 0
-    while COUNT < 3:
-        STEP = random.randint(1, 5)
-        NUMBER_1 = random.randint(1, 20)
-        NUMBER_2 = random.randint(65, 100)
-        LINE_INTEGERS = list(range(NUMBER_1, NUMBER_2, STEP))
-        LINE_INTEGERS = LINE_INTEGERS[0: 10]
-        REPLACED_INDEX = random.randint(0, len(LINE_INTEGERS) - 1)
-        for i, x in enumerate(LINE_INTEGERS):
-            LINE_STRINGS.append(str(x))
-        CORRECT_ANSWER = int(LINE_STRINGS[REPLACED_INDEX])
-        LINE_STRINGS[REPLACED_INDEX] = '..'
-        LINE_STRINGS = ' '.join(LINE_STRINGS)
-        print(f'Question: {LINE_STRINGS}')
-        USER_ANSWER = prompt.integer('Your answer: ')
-        COUNT += get_answer(CORRECT_ANSWER, USER_ANSWER)
-        LINE_STRINGS = []
-        if COUNT == 3:
+    print(QUESTION)
+    count = 0
+    while count < 3:
+        conditions, correct_answer = get_conditions()
+        count += game_starter(conditions, correct_answer, NAME)
+        if count == 3:
             print(f'Congratulations, {NAME}!')
