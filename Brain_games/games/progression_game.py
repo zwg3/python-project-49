@@ -24,7 +24,3 @@ def get_conditions():
     line_strings[replaced_index] = '..'
     line_strings = ' '.join(line_strings)
     return str(line_strings), str(replaced_value)
-
-
-def main():
-    return (get_conditions())

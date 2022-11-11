@@ -20,7 +20,3 @@ def get_conditions():
     else:
         answer = 'no'
     return str(number_1), str(answer)
-
-
-def main():
-    return (get_conditions())

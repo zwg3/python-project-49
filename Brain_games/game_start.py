@@ -9,7 +9,7 @@ def game_starter(conditions):
     count = 0
     print(conditions.QUESTION)
     while count < 3:
-        recieved_conditions = conditions.main()
+        recieved_conditions = conditions.get_conditions()
         question_for_user, c = recieved_conditions
         print(f'Question: {question_for_user}')
         u = prompt.string('Your answer: ')

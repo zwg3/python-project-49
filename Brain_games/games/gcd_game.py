@@ -11,7 +11,3 @@ def get_conditions():
     question = f'{number_1} {number_2}'
     asnswer = gcd(number_1, number_2)
     return str(question), str(asnswer)
-
-
-def main():
-    return (get_conditions())

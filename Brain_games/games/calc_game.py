@@ -11,8 +11,8 @@ def get_numbers():
     return number_1, number_2, operation
 
 
-def get_conditions(x):
-    x, y, z = x()
+def get_conditions():
+    x, y, z = get_numbers()
     if z == 1:
         question = f'{x} + {y}'
         answer = x + y
@@ -23,7 +23,3 @@ def get_conditions(x):
         question = f'{x} * {y}'
         answer = x * y
     return str(question), str(answer)
-
-
-def main():
-    return get_conditions(get_numbers)

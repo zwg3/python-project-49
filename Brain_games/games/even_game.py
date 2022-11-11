@@ -19,7 +19,3 @@ def get_conditions():
     else:
         answer = 'no'
     return number_1, answer
-
-
-def main():
-    return (get_conditions())

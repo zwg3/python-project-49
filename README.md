@@ -8,7 +8,8 @@
 - prompt 0.4.1
 
 ### Installation:
-In terminal type the following command from the package directory:
+In terminal type the following commands from the package directory:
+make build
 make package-install
 
 ### Usage:
