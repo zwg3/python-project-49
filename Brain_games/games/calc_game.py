@@ -11,26 +11,6 @@ def get_numbers():
     return number_1, number_2, operation
 
 
-# def get_conditions(x):
-#     x, y, z = x()
-#     if z == 1:
-#         question = f'{x} + {y}'
-#         answer = x + y
-#     if z == 2:
-#         question = f'{x} - {y}'
-#         answer = x - y
-#     if z == 3:
-#         question = f'{x} * {y}'
-#         answer = x * y
-#     return str(question), str(answer)
-
-
-# !!!def calc_game():
-#     return get_conditions(get_numbers)
-
-# def calc_game():
-#     return (QUESTION, get_conditions(get_numbers))
-
 def get_conditions(x):
     x, y, z = x()
     if z == 1:
@@ -45,8 +25,5 @@ def get_conditions(x):
     return str(question), str(answer)
 
 
-def calc_game():
+def main():
     return get_conditions(get_numbers)
-
-
-

@@ -22,5 +22,5 @@ def get_conditions():
     return str(number_1), str(answer)
 
 
-def prime_game():
-    return (QUESTION, get_conditions())
+def main():
+    return (get_conditions())

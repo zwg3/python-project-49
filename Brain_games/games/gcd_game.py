@@ -13,5 +13,5 @@ def get_conditions():
     return str(question), str(asnswer)
 
 
-def gcd_game():
-    return (QUESTION, get_conditions())
+def main():
+    return (get_conditions())

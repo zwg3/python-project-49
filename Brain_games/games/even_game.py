@@ -21,5 +21,5 @@ def get_conditions():
     return number_1, answer
 
 
-def even_game():
-    return (QUESTION, get_conditions())
+def main():
+    return (get_conditions())

@@ -26,5 +26,5 @@ def get_conditions():
     return str(line_strings), str(replaced_value)
 
 
-def progression_game():
-    return (QUESTION, get_conditions())
+def main():
+    return (get_conditions())
