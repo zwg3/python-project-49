@@ -15,7 +15,6 @@ def is_prime(x):
 
 def get_conditions():
     number_1 = random.randint(1, 100)
-    answer = 0
     if is_prime(number_1):
         answer = 'yes'
     else:
