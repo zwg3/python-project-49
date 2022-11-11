@@ -10,14 +10,15 @@ def game_starter(conditions):
     print(conditions.QUESTION)
     while count < 3:
         recieved_conditions = conditions.get_conditions()
-        question_for_user, c = recieved_conditions
+        question_for_user, correct_answer = recieved_conditions
         print(f'Question: {question_for_user}')
-        u = prompt.string('Your answer: ')
-        if u == c:
+        user_answer = prompt.string('Your answer: ')
+        if user_answer == correct_answer:
             print('Correct!')
             count += 1
         else:
-            print(f"'{u}' is wrong answer ;(. Correct answer was '{c}'.")
+            print(f"'{user_answer}' is wrong answer ;(. "
+                  f"Correct answer was '{correct_answer}'.")
             print(f"Let's try again, {name}!")
             break
     if count == 3:
