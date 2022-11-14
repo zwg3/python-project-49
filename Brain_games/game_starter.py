@@ -19,6 +19,5 @@ def start_game(conditions):
             print(f"'{user_answer}' is wrong answer ;(. "
                   f"Correct answer was '{correct_answer}'.")
             print(f"Let's try again, {name}!")
-            break
-    if count == 3:
+            return
         print(f'Congratulations, {name}!')
