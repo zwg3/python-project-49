@@ -5,19 +5,19 @@ MIN_INTEGER = 1
 MAX_INTEGER = 100
 
 
-def is_prime(x):
-    if x < 2:
+def is_prime(number):
+    if number < 2:
         return False
-    for i in range(2, x):
-        if x % i == 0:
+    for i in range(2, number):
+        if number % i == 0:
             return False
     return True
 
 
 def get_conditions():
-    number_1 = random.randint(MIN_INTEGER, MAX_INTEGER)
-    if is_prime(number_1):
+    random_number = random.randint(MIN_INTEGER, MAX_INTEGER)
+    if is_prime(random_number):
         answer = 'yes'
     else:
         answer = 'no'
-    return str(number_1), str(answer)
+    return str(random_number), str(answer)

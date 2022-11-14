@@ -9,8 +9,9 @@
 
 ### Installation:
 In terminal type the following commands from the package directory:
-make build
-make package-install
+- make install
+- make build
+- make package-install
 
 ### Usage:
 After the installation you can use the following commands to run games:
