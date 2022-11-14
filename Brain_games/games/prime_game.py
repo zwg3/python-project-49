@@ -1,7 +1,8 @@
-#!/usr/bin/env python3
 import random
 
 QUESTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+MIN_INTEGER = 1
+MAX_INTEGER = 100
 
 
 def is_prime(x):
@@ -14,7 +15,7 @@ def is_prime(x):
 
 
 def get_conditions():
-    number_1 = random.randint(1, 100)
+    number_1 = random.randint(MIN_INTEGER, MAX_INTEGER)
     if is_prime(number_1):
         answer = 'yes'
     else:

@@ -1,14 +1,19 @@
-#!/usr/bin/env python3
 import random
 
 QUESTION = 'What number is missing in the progression?'
+MIN_INTEGER = 1
+MAX_INTEGER = 100
+MIN_LINE_LIMIT_INTEGER = 20
+MAX_LINE_LIMIT_ITEGER = 65
+MIN_STEP_INTEGER = 1
+MAX_STEP_INTEGER = 5
 
 
 def get_progression():
     line_integers = []
-    step = random.randint(1, 5)
-    number_1 = random.randint(1, 20)
-    number_2 = random.randint(65, 100)
+    step = random.randint(MIN_STEP_INTEGER, MAX_STEP_INTEGER)
+    number_1 = random.randint(MIN_INTEGER, MIN_LINE_LIMIT_INTEGER)
+    number_2 = random.randint(MAX_LINE_LIMIT_ITEGER, MAX_INTEGER)
     line_integers = list(range(number_1, number_2, step))
     line_integers = line_integers[0: 10]
     return line_integers
