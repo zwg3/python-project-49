@@ -2,6 +2,7 @@
 from Brain_games.games import gcd_game
 from Brain_games.game_starter import start_game
 
+
 def main():
     start_game(gcd_game)
 
